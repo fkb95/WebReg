@@ -1,0 +1,369 @@
+/*----COMMON SECTION----*/
+html, body {
+    height: 100%;
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+}
+
+body{
+    background-image: url("../src/img/bg3.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.row{
+    margin-left:0 !important;
+    margin-right:0 !important;
+}
+#header {
+    height: 45px;
+    background-color: #222222;
+    color: var(--color_palette_1);
+    line-height: 45px;
+    position: fixed;
+    margin: 0;
+    width: 100%;
+}
+#main{
+    padding-top:45px;
+    opacity: 0.9;
+}
+.container{
+    height:100%;
+    position: relative;
+}
+#footer {
+    height: 30px;
+    line-height:30px;
+    position: fixed;
+    bottom: 0px;
+    background-color: #222222;
+    width:100%;
+    color:white;
+}
+.wr_logo{
+    margin:0;
+    padding-left:6px;
+    line-height: 45px;
+}
+a{
+    color:white;
+}
+a:hover{
+    color:#44C4EA;
+    text-decoration: none;
+}
+.wr_leftmenu{
+    /*position: fixed;
+    top:45px;
+    bottom:30px;*/
+    width:180px;
+    color:white;
+    background-color: #222222;
+    opacity: 1.0 !important;
+}
+.wr_topmenu{
+    margin:0;
+    position:fixed;
+    /*margin-left:180px;*/
+    padding-left:10px;
+    height:40px;
+    /*top:45px;*/
+    width:100%;
+    line-height: 41px;
+    color:white;
+    background-color: #008cba;
+    z-index: 1;
+}
+
+.tooltip{
+    padding:10px;
+}
+
+.navbar, .navbar-header, .navbar-default, .navbar-fixed-top{
+    height:45px !important;
+    line-height: 45px;
+}
+
+.wr_black_screen{
+    width:100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    text-align: right;
+}
+
+#myModal{
+    margin-top: 100px;
+}
+
+
+/*----HOME SECTION----*/
+
+.jumbotron{
+    text-align: center;
+}
+.wr_aboutwrcontainer{
+    margin-bottom: 30px;
+}
+.wr_aboutwr{
+    border: 1px solid var(--color_palette_3);
+    border-color: #ddd;
+    border-radius: 7px;
+    padding:20px;
+    background-color: var(--color_palette_4);
+}
+.wr_home_loginbuttoncontainer{
+    padding-top: 18px;
+    padding-bottom: 18px;
+    text-align: center;
+}
+
+.navbar-right{
+    padding-right:15px;
+}
+
+.wr_cookie_policy_alert{
+    /*position: absolute;*/
+    margin-top:15%;
+    width:100%;
+    text-align: center;
+    padding:10px;
+}
+
+/*----LOGIN SECTION----*/
+
+.wr_loginform{
+    padding-left:40px;
+    padding-right:40px;
+    margin-top:15%;
+}
+.wr_loginbuttoncontainer{
+    text-align: center;
+}
+
+/*.wr_verticalalign_wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: table;
+    margin:0;
+    padding:0;
+}
+.wr_verticalalign_middle{
+    width: 100%;
+    height:100%;
+    display: table-cell;
+    vertical-align: middle;
+    margin:0;
+    padding:0;
+}*/
+
+/*----INJECTED PAGE SECTION----*/
+
+.wr_injectedpage{
+    height:100%;
+}
+.wr_injectedpagecontainer{
+    height:100%;
+    /*margin-left: 180px;*/
+}
+.wr_injectedpagecontainer{
+    height:100%;
+    padding:40px 0px 0px 0px;
+}
+.wr_injectedpagecontainer .col{
+    margin-bottom:8px;
+}
+
+/*-----PROFILE SECTION-----*/
+.wr_profiledetailscontainer{
+    background-color: white;
+    border-top:4px solid lightgrey;
+    font-size: 12px;
+    margin-right:30px;
+}
+.wr_profiledetailstitlecontainer{
+    height:40px;
+    line-height: 40px;    
+}
+.wr_profiledetailspicturecontainer{
+    padding-bottom:10px;
+}
+.wr_profiledetailsnamecontainer{
+    padding-bottom:10px;
+    font-weight: bold;
+}
+.wr_profiledetailstaxtcodecontainer{
+     padding-bottom:10px;
+}
+.wr_profiledetailstudentsclasscontainer{
+    padding-bottom:20px;
+}
+.wr_profileeditingcontainer{
+    background-color: white;
+    border-top:4px solid lightgrey;
+}
+.wr_profileeditingtitlecontainer{
+    border-bottom:2px solid lightgrey;
+    font-size: 12px;
+    height:40px;
+    line-height: 40px;
+}
+.wr_profileeditingform{
+    padding:20px;
+    text-align: center;
+}
+.wr_profileeditingform .col{
+    text-align: left;
+    margin:0;
+    padding-bottom:20px;
+}
+
+/*------ TEACHERS SECTION --------*/
+
+.wr_teachers_table{
+    background-color: white;
+}
+
+.wr_teachers_table a{
+    color: royalblue;
+}
+
+.wr_teachers_table_centeralign{
+    text-align: center;
+}
+
+/*------ ABSENCES SECTION --------*/
+
+.wr_absences_table{
+    background-color: white;
+}
+
+.wr_absences_justified{
+    background-color: #c0ffca;
+}
+
+.wr_absences_not_justified{
+    background-color: #ffd7af;
+}
+
+/*------ GRADES SECTION --------*/
+
+.wr_grades_table{
+    background-color: white;    
+}
+
+.wr_grades_table tr, .wr_grades_table th{
+    min-height: 35px;
+    height:35px;
+}
+
+.wr_grades_table td{
+    text-align: center;
+    position: relative;
+}
+
+.wr_grades td span{
+    width:100%;
+}
+
+.wr_grades_types_legend{
+    /*width:100%;*/
+    margin-bottom:40px;
+    background-color: white;
+    /*border-top:4px solid lightgrey;*/
+    height:40px;
+    line-height: 40px;
+    margin:0;
+    padding:0;
+}
+
+.wr_grades_types_legend .col{
+    margin:0;
+    height:40px;
+    padding:0;
+    text-align: center;
+}
+
+.wr_grades_table_container{
+    padding:0 !important;
+}
+
+.wr_green_avarage{
+    background-color:#93ffa5;
+    font-weight: bold;
+}
+
+.wr_lightgreen_avarage{
+    background-color:#c0ffca;
+    font-weight: bold;
+}
+
+.wr_yellow_avarage{
+    background-color:#fffcaf;
+    font-weight: bold;
+}
+
+.wr_orange_avarage{
+    background-color:#ffd7af;
+    font-weight: bold;
+}
+
+.wr_red_avarage{
+    background-color:#ffafaf;
+    font-weight: bold;
+}
+
+.wr_red_grade{
+    color:red;
+    font-weight: bold;
+}
+
+.wr_grades_chart, .wr_grades_chart_desc{
+    background-color: white;
+    padding:10px;
+    margin-top:40px;
+}
+
+.wr_grade_desc_alert{
+    position: absolute;
+    top:0;
+    right:0;
+}
+
+/*------ HOMEWORK SECTION ----------*/
+
+.wr_homework_table{
+    background-color: white;    
+}
+
+.wr_homework_new{
+    background-color: #c8ffd2;
+}
+
+.wr_homework_legend{
+    background-color: white;
+    height:40px;
+    line-height: 40px;
+    margin:0;
+    padding:0;
+}
+
+/*------ SLIDES SECTION ----------*/
+
+.wr_slide{
+    width:100%;
+    height:500px;
+    min-height:100%;
+    position: relative;
+    background-color: white;
+    padding:10px;
+    margin-bottom:10px;
+}

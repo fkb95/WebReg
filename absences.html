@@ -1,0 +1,35 @@
+<div id="wrapper">
+    <left-menu></left-menu>
+    <top-menu></top-menu>
+    <div class="wr_injectedpage" id="page-content-wrapper"> 
+        <div class="wr_injectedpagecontainer">
+            <div class="wr_injectedpagecontent animated fadeIn">
+                <div class="table-responsive">
+                    <table class="wr_absences_table table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Absece Date</th>
+                                <th>Justified</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="absence in absences" 
+                                ng-class="{wr_absences_justified: absence.isJustified = 1,wr_absences_not_justified: !absence.JustifyDate}">
+                                <td>
+                                    <span ng-if="!absence.JustifyDate" style="font-weight:bold;">{{absence.AbsenceDate}}</span>
+                                    <span ng-if="absence.JustifyDate">{{absence.AbsenceDate}}</span>
+                                </td>
+                                <td ng-if="absence.JustifyDate">
+                                    {{absence.JustifyDate}}
+                                </td>
+                                <td ng-if="!absence.JustifyDate">                                    
+                                    <span style="opacity:0.4;">not justified</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

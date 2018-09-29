@@ -1,0 +1,99 @@
+<div id="wrapper">
+    <left-menu></left-menu>
+    <top-menu></top-menu>
+    <div class="wr_injectedpage contaier" id="page-content-wrapper"> 
+        <div class="wr_injectedpagecontainer">
+            <div class="wr_injectedpagecontent animated fadeIn">
+
+                <div class="container wr_profiledetailscontainer col col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="wr_profiledetailstitlecontainer">
+                        <p><strong>Profile Details</strong></p>
+                    </div>
+                    <div class="wr_profiledetailspicturecontainer col col-xs-3 col-sm-6 col-md-12 col-lg-12">
+                        <img class="img-thumbnail img-responsive wr_profileimage" src="{{account.ProfileImage}}">                    
+                    </div>
+                    <div class="col col-xs-8 col-sm-6 col-md-12 col-lg-12">
+                        <div class="wr_profiledetailsnamecontainer">
+                            <span>{{account.FirstName}}&nbsp{{account.LastName}}</span>                    
+                        </div>
+                        <div class="wr_profiledetailstaxtcodecontainer">
+                            <span><i class="fa fa-user"></i> &nbsp {{account.TaxCode}}</span>                    
+                        </div>
+                        <div class="wr_profiledetailstudentsclasscontainer" ng-if="studentClass">
+                            <span><i class="fa fa-users"></i> &nbsp {{studentClass.Name}}</span>                    
+                        </div> 
+                    </div>
+                    <div>
+                        <themes></themes>
+                    </div>
+                </div>
+                <div class="wr_profileeditingcontainer col col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="wr_profileeditingtitlecontainer">
+                        <p><strong>Profile informations</strong></p>
+                    </div>
+                    <form class="wr_profileeditingform">
+                    <div class="form-group" style="padding-bottom:10px;">
+                        <div class="col col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                            <label><u>Name:</u></label>
+                            <p class="form-control-static">{{account.FirstName}}</p>
+                        </div>
+                        <div class="col hidden-xs col-sm-4 col-md-4 col-lg-4">
+                            <label><u>Second Name:</u></label>
+                            <p class="form-control-static">{{account.SecondName}}</p>
+                        </div>
+                        <div class="col col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                            <label><u>Surname:</u></label>
+                            <p class="form-control-static">{{account.LastName}}</p>
+                        </div>
+                          <div class="col col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                            <label><u>Date of birth:</u></label>
+                            <p class="form-control-static">{{account.DateOfBirth}}</p>
+                          </div>
+                          <div class="col col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                            <label><u>Email address:</u></label>
+                            <p class="form-control-static">{{account.EmailAddress}}</p>
+                          </div>                    
+                      </div>
+                      <div class="form-group" style="text-align:center;">
+                          <div class="col col-sm-12 col-md-12 col-lg-12" style="text-align:center;">                             
+                              <button class="btn btn-primary hidden-xs hidden-sm" data-toggle="modal" data-target="#myModal">
+                                  <span>Change profile picture</span>
+                              </button>
+                              <button class="btn btn-primary hidden-md hidden-lg btn-xs" data-toggle="modal" data-target="#myModal">
+                                  <span>Change picture</span>
+                              </button>
+                            <!--<label for="InputFile">Update profile picture</label><input type="file" id="exampleInputFile">-->
+                            <!--<p class="help-block">Example block-level help text here.</p>-->
+                          </div>
+
+                      </div>
+                    </form>
+                </div>
+                <div class="wr_profileeditingcontainer col col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="wr_profileeditingtitlecontainer">
+                        <p><strong>Change password</strong></p>
+                    </div>
+                    <form class="wr_profileeditingform">                
+                      <div class="form-group">
+                          <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <label>Old password:</label>
+                            <input type="password" class="form-control" id="oldpassword" placeholder="Old password" ng-model="oldpassword">
+                          </div>
+                          <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <label>New password:</label>
+                            <input type="password" class="form-control" id="newpassword" placeholder="New password" ng-model="newpassword">
+                          </div>
+                          <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <label>Confirm new password:</label>
+                            <input type="password" class="form-control" id="newpassword2" placeholder="Confirm new password" ng-model="newpassword2">
+                          </div> 
+                      </div>
+                      <button class="btn btn-default" ng-click="updatepassword(oldpassword,newpassword,newpassword2)">Submit</button>
+                      <span style="color:red"><i>{{passwordChangeMessage}}</i></span>
+                    </form>
+                </div>
+                <p>&emsp;</p>
+            </div>  
+        </div>
+    </div>
+</div>

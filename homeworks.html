@@ -1,0 +1,48 @@
+<div id="wrapper">
+    <left-menu></left-menu>
+    <top-menu></top-menu>
+    <div class="wr_injectedpage" id="page-content-wrapper"> 
+        <div class="wr_injectedpagecontainer">
+            <div class="wr_injectedpagecontent animated fadeIn">
+                <div class="wr_homework_table_container">
+                    <div class="table-responsive">
+                        <table class="wr_homework_table table table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="hidden-xs">Date</th>
+                                    <th>Delivery</th>
+                                    <th>Subject</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="homework in homeworklist" ng-class="{wr_homework_new: homework.isNew}">
+                                    <td class="hidden-xs">{{homework.CreationDate}}</td>
+                                    <td>{{homework.DeliveryDate}}</td>
+                                    <td class="hidden-xs hidden-sm">{{homework.subjectDescription}}</td>
+                                    <td class="visible-xs visible-sm">
+                                        <div data-toggle="tooltip" data-placement="top" title="{{homework.subjectDescription}}">
+                                            {{homework.subjectShortDescription}}
+                                        </div>                                        
+                                    </td>
+                                    <td>{{homework.homeworkDescription}}</td>
+                                </tr>                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="wr_homework_legend col col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <label>Legend:</label>
+                    </div>
+                    <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4 wr_homework_new">
+                        New
+                    </div>
+                    <div class="col col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        Old
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

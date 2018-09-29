@@ -1,0 +1,32 @@
+<div class="wr_leftmenu" id="sidebar-wrapper">
+    <ul class="nav nav-pills nav-stacked sidebar-nav">
+        <!--<li ng-class="{active: selected_menu_name == 'home'}"><a href="#Dashboard">Home</a></li>-->
+        <li ng-class="{active: selected_menu_name == 'profile'}" class="hvr-fade">
+            <a href="#profile"><i class="fa fa-user"></i>&nbsp Profile</a>
+        </li>        
+        <li ng-class="{active: selected_menu_name == 'teachers'}" class="hvr-fade">
+            <a href="#teachers"><i class="fa fa-graduation-cap"></i>&nbsp Teachers</a>
+        </li>
+        <li ng-class="{active: selected_menu_name == 'grades'}" class="hvr-fade">
+            <a href="#grades"><i class="fa fa-book"></i>&nbsp Grades</a>
+        </li>
+        <li ng-class="{active: selected_menu_name == 'homeworks'}" class="hvr-fade">
+            <a href="#homeworks"><i class="fa fa-pencil"></i>&nbsp Homework</a>
+        </li>
+        <li ng-class="{active: selected_menu_name == 'absences'}" class="hvr-fade">
+            <a href="#absences"><i class="fa fa-calendar-times-o"></i>&nbsp Absences</a>
+        </li>  
+        <li ng-class="{active: selected_menu_name == 'slides'}" ng-show="account.UserID==1" class="hvr-fade">
+            <a href="#slides"><i class="fa fa-file-powerpoint-o"></i>&nbsp Slides</a>
+        </li>           
+        <!--<li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" >
+                Other <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+            </ul>
+        </li>-->
+    </ul>
+</div>

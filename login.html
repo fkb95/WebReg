@@ -1,0 +1,43 @@
+<div class="container animated fadeInRight">
+<!--    <div class="wr_verticalalign_wrap">
+        <div class="wr_verticalalign_middle">-->            
+                <form class="wr_loginform form-signin slide-animation" ng-controller="loginController">
+                    <h2 class="form-signin-heading">Log in</h2>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="inptUsername" style="text-align:left !important">Username</label>
+                            <div class="input-group">  
+                                <input type="text" class="form-control" id="inptUsername" placeholder="Username" ng-model="username">
+                                <div class="input-group-addon"><i clasS="fa fa-user"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="inptPassword">Password</label>
+                            <div class="input-group">                        
+                                <input type="password" class="form-control" id="inptPassword" placeholder="Password" ng-model="password">
+                                <div class="input-group-addon"><i class="fa fa-unlock-alt"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="remember"> Remember me
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="wr_loginbuttoncontainer">
+                            <button ng-click="login(username, password, remember)" class="btn btn-primary btn-lg">
+                                <span ng-show="!isLoading">Log in</span>
+                                <span ng-show="!sLoading"><i class="fa fa-spin"></i></span> 
+                            </button>
+                        </div>
+                    </div>
+                    <span style="color:red"><i>{{loginerror}}</i></span>
+                </form>            
+<!--        </div>
+    </div>-->
+</div>

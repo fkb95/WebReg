@@ -1,0 +1,47 @@
+<div id="wrapper">
+    <left-menu></left-menu>
+    <top-menu></top-menu>
+    <div class="wr_injectedpage" id="page-content-wrapper"> 
+        <div class="wr_injectedpagecontainer">
+            <div class="wr_injectedpagecontent animated fadeIn">
+                <div class="table-responsive">
+                    <table class="wr_teachers_table table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Teacher</th>
+                                <th class="wr_teachers_table_centeralign">Email</th>
+                                <th class="wr_teachers_table_centeralign">Tel</th>
+                                <th class="wr_teachers_table_centeralign">Cell</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="teacher in teachers">
+                                <td style="text-align:left;" class="hidden-xs hidden-sm">{{teacher.Description}}</td>
+                                    <td style="text-align:left;" class="visible-xs visible-sm">
+                                        <div data-toggle="tooltip" data-placement="top" title="{{teacher.Description}}">
+                                            {{teacher.ShortDescription}}
+                                        </div>                                        
+                                    </td>
+                                <td>
+                                    {{teacher.LastName}} &nbsp {{teacher.FirstName}}
+                                </td>                                
+                                <td class="wr_teachers_table_centeralign">
+                                    <a href="mailto:{{teacher.Description}}">{{teacher.EmailAddress}}</a>
+                                    <span class="text-muted" ng-if="!teacher.EmailAddress" style="opacity:0.4;">/</span>
+                                </td>
+                                <td class="wr_teachers_table_centeralign">
+                                    {{teacher.Telephone}}<span class="text-muted" ng-if="!teacher.Telephone" style="opacity:0.4;">/</span>
+                                </td>
+                                <td class="wr_teachers_table_centeralign">
+                                    {{teacher.Cellphone}}<span class="text-muted" ng-if="!teacher.Cellphone" style="opacity:0.4;">/</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>&emsp;</p>
+            </div>
+        </div>
+    </div>
+</div>

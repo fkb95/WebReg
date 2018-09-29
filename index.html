@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app="WebRegApp">
+    <head>
+        <meta charset="utf-8">
+        <title>WebReg - Online electronic logbook</title>
+        <link rel="icon" href="src/img/favicon.png"/>
+        <meta name="description" content="Progetto di tesi di Francesco Brancato, 5°A Informatica Castiglione del Lago."> 
+        <meta name="keywords" content="Userfull simulatore gestionale alunni professori materie voti progetti lavori francesco brancato castiglione del lago esame statale 2016">
+        <!--Mobile-->
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=si" />
+        <link rel="shortcut icon" sizes="192x192" href="src/img/wr.png">
+        <link rel="apple-touch-startup-image" href="src/img/bg3.jpg">
+        <!--CSS-->
+        <link id="cssPrimary" href="css/bootstrap.css" rel="stylesheet" /> 
+        <link href="css/webreg.css" rel="stylesheet" />
+        <link href="css/hover.css" rel="stylesheet" />
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/simple-sidebar.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <link href="css/upload.css" rel="stylesheet">
+    </head>
+    <body>
+         <div class="navbar navbar-default navbar-fixed-top">
+             <div class="navbar navbar-default navbar-fixed-top">
+              
+                <div class="navbar-header">
+                    <a href="#/" class="navbar-brand">
+                      <i class="fa fa-home"></i> WebReg  
+                      <small class="hidden-xs">| Online electronic logbook</small>
+                    </a>
+                    <small class="text-muted" style="line-height:45px;">v. 1.5.3</small>
+                    <button aria-expanded="false" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar-main">
+                  <ul class="nav navbar-nav">                    
+                    <li ng-class="{active: selected_menu_name == 'profile'}" class="visible-xs">
+                        <a href="#profile"><i class="fa fa-user"></i>&nbsp Profile</a>
+                    </li>        
+                    <li ng-class="{active: selected_menu_name == 'teachers'}" class="visible-xs">
+                        <a href="#teachers"><i class="fa fa-graduation-cap"></i>&nbsp Teachers</a>
+                    </li>
+                    <li ng-class="{active: selected_menu_name == 'grades'}" class="visible-xs">
+                        <a href="#grades"><i class="fa fa-book"></i>&nbsp Grades</a>
+                    </li>
+                    <li ng-class="{active: selected_menu_name == 'homeworks'}" class="visible-xs">
+                        <a href="#homeworks"><i class="fa fa-pencil"></i>&nbsp Homeworks</a>
+                    </li>                    
+                    <li ng-class="{active: selected_menu_name == 'slides'}" class="visible-xs">
+                        <a href="#slides"><i class="fa fa-file-powerpoint-o"></i>&nbsp Slides</a>
+                    </li>                      
+                  </ul>
+                  <!--<ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" target="_blank">Button 1</a></li>
+                    <li><a href="#" target="_blank">Button 2</a></li>
+                  </ul>-->
+                </div>
+              
+            </div>            
+        </div>
+        
+        <div id="main" ng-controller="mainController" ng-view></div>
+        <modal-change-picture></modal-change-picture>
+        <div id="footer">
+            <p class="text-center text-muted visible-lg">Tesi di maturità di Francesco Brancato - 5°A Informatica Ist. Omnicomprensivo Rosselli Rasetti Castiglione del Lago - A.S. 2015/2016 </p>
+            <p class="text-center text-muted visible-md">Tesi di Francesco Brancato - 5°A Informatica Ist. Rosselli Rasetti Castiglione del Lago - A.S. 2015/2016 </p>
+            <p class="text-center text-muted visible-sm">Tesi di Francesco Brancato - 5°A Informatica Castiglione del Lago - A.S. 2015/2016 </p>
+            <p class="text-center text-muted visible-xs">Francesco Brancato - 5°A Informatica</p>
+        </div>
+		
+		<!--JS-->
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-cookies.js"></script>
+        <script src="js/angular-animate.js"></script>
+		<script src="js/angular-route.js"></script>        
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/tooltip.js"></script>
+        <script src="js/ui-bootstrap-tpls-0.14.3.min.js"></script>
+        <script src="js/webreg.js"></script>
+        <script src="js/Chart.js"></script>
+        <script src="js/Chart.Line.js"></script>
+    </body>
+</html>
