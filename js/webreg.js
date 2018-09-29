@@ -66,7 +66,7 @@ WebRegApp.controller('mainController', function($scope, $rootScope, $http, $loca
     $scope.logOut = function(){
         $cookies.remove("AccountID");
         $http({
-                url: 'php/logout.php',
+                url: 'phpc/logout.php',
                 method: 'POST',
 				params: {cookiename : "account"}
         })
@@ -90,10 +90,42 @@ WebRegApp.controller('mainController', function($scope, $rootScope, $http, $loca
         document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);    
     }
     
+    $scope.goTop = function(){
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+    }
+    
+    /*da cancellare*/
+    $scope.italiano = function(){
+        var position = $(".wr_slide_ita").position();
+        $scope.goTo(position.top)
+    }
+    $scope.storia = function(){
+        var position = $(".wr_slide_sto").position();
+        $scope.goTo(position.top)
+    }
+    $scope.fisica = function(){
+        var position = $(".wr_slide_edf").position();
+        $scope.goTo(position.top)
+    }
+    $scope.tecnologie = function(){
+        var position = $(".wr_slide_tec").position();
+        $scope.goTo(position.top)
+    }
+    $scope.informatica = function(){
+        var position = $(".wr_slide_inf").position();
+        $scope.goTo(position.top)
+    }
+    
+    $scope.goTo = function(val){
+        $("html, body").animate({ scrollTop: val }, "slow");
+    }
+    
+    $rootScope.events = [];
+    
     /*if($cookies.get("AccountID")){
         var currentAccountID = $cookies.get("AccountID")
         $http({
-            url: 'php/login.php',
+            url: 'phpc/login.php',
             method: 'GET',
             params: { username: "", password: "", remember: false, accountid: currentAccountID}
         })
@@ -154,7 +186,7 @@ WebRegApp.controller('loginController', function($scope, $rootScope, $http, $loc
         if($scope.username && $scope.password){
             $scope.isLoading = true;
             $http({
-                url: 'php/login.php',
+                url: 'phpc/login.php',
                 method: 'GET',
                 params: { username: usr, password: pass, remember: rem}
             })
@@ -239,7 +271,7 @@ WebRegApp.controller('profileController', function($scope, $rootScope, $location
     $scope.updatepassword = function (oldpassword, newpassword, newpassword2){
         if(oldpassword = $rootScope.account.Password){
              $http({
-             url: 'php/updatePassword.php',
+             url: 'phpc/updatePassword.php',
              method: 'POST',
              params: {
                      accountid : $rootScope.account.AccountID,
@@ -265,7 +297,7 @@ WebRegApp.controller('profileController', function($scope, $rootScope, $location
     
     if(!$rootScope.studentClass){
         $http({
-            url: 'php/getStudentClass.php',
+            url: 'phpc/getStudentClass.php',
             method: 'GET',
             params: {
                 userid : $rootScope.account.UserID, 
@@ -316,9 +348,18 @@ WebRegApp.controller('absencesController', function($scope, $rootScope, $locatio
     }
     $rootScope.selected_menu_name="absences";
     
+    $scope.initCalendar = function(events){
+        $('#absencesCalendar').fullCalendar({
+			defaultDate: '2015-09-15',
+			editable: false,
+			eventLimit: true, // allow "more" link when too many events
+			events: events
+		});
+    }
+    
     if(!$rootScope.absences){
         $http({
-            url: 'php/getStudentAbsences.php',
+            url: 'phpc/getStudentAbsences.php',
             method: 'GET',
             params: {
                 studentid : $rootScope.account.UserID
@@ -326,11 +367,34 @@ WebRegApp.controller('absencesController', function($scope, $rootScope, $locatio
         })
         .success(function(response){
             $rootScope.absences = response;
+            $.each($rootScope.absences, function(index,absence){
+                var title = "";
+                var color = "";
+                if(absence.isJustified==1){
+                    title = "Assenza giustificata";
+                    color = "#08b169";
+                }else{
+                    title = "Assenza non giustificata";
+                    color = "#B10821";
+                }
+                $rootScope.events.push({
+					title: title,
+					start: new Date(absence.AbsenceDate),
+                    color: color
+                });
+            });
+            $scope.initCalendar($rootScope.events);
         })
         .error(function(response){
             console.log("getStudentAbsences error" + response);
         });
+    }else{
+        $scope.initCalendar($rootScope.events);
     }
+    
+    
+    
+     
     
 });
 
@@ -388,7 +452,7 @@ WebRegApp.controller('homeworksController', function($scope, $rootScope, $locati
     
     if(!$rootScope.studentClass){
         $http({
-            url: 'php/getStudentClass.php',
+            url: 'phpc/getStudentClass.php',
             method: 'GET',
             params: {
                 userid : $rootScope.account.UserID, 
@@ -405,7 +469,7 @@ WebRegApp.controller('homeworksController', function($scope, $rootScope, $locati
     
     if(!$rootScope.homeworklist){
         $http({
-            url: 'php/getStudentHomework.php',
+            url: 'phpc/getStudentHomework.php',
             method: 'GET',
             params: {
                 classid : $rootScope.studentClass.ClassID
@@ -451,7 +515,7 @@ WebRegApp.controller('homeworksController', function($scope, $rootScope, $locati
 
 
 
-WebRegApp.controller('gradesController', function($scope, $rootScope, $location, $cookies, $http) {
+WebRegApp.controller('gradesController', function($scope, $rootScope, $location, $cookies, $http, $filter) {
     if(!$rootScope.account){
         $location.path("/login");
     }
@@ -459,7 +523,7 @@ WebRegApp.controller('gradesController', function($scope, $rootScope, $location,
     
     if(!$scope.gradetypes){
         $http({
-            url: 'php/getGradeTypes.php',
+            url: 'phpc/getGradeTypes.php',
             method: 'GET'
         })
         .success(function(response){
@@ -473,7 +537,7 @@ WebRegApp.controller('gradesController', function($scope, $rootScope, $location,
     
     if(!$rootScope.studentClass){
         $http({
-            url: 'php/getStudentClass.php',
+            url: 'phpc/getStudentClass.php',
             method: 'GET',
             params: {
                 userid : $rootScope.account.UserID, 
@@ -491,7 +555,7 @@ WebRegApp.controller('gradesController', function($scope, $rootScope, $location,
     if($rootScope.studentClass){
         if(!$rootScope.subjects){
             $http({
-                url: 'php/getStudentSubjects.php',
+                url: 'phpc/getStudentSubjects.php',
                 method: 'GET',
                 params: {
                     userid : $rootScope.account.UserID,
@@ -505,7 +569,7 @@ WebRegApp.controller('gradesController', function($scope, $rootScope, $location,
                 $.each($rootScope.subjects, function(index,subject){                    
                     subject.grades = [];                                        
                     $http({
-                        url: 'php/getStudentGradesForSubject.php',
+                        url: 'phpc/getStudentGradesForSubject.php',
                         method: 'GET',
                         params: {
                             userid : $rootScope.account.UserID,
@@ -542,30 +606,41 @@ WebRegApp.controller('gradesController', function($scope, $rootScope, $location,
     }
     
     
-    $scope.chartInit = function(subject){
-        $(".wr_grades_chart").removeClass("hidden");
-        $(".wr_grades_chart_desc").removeClass("hidden");
+    $scope.chartInit = function(subject){        
         $("#canvas").hide(100);
         document.getElementById("canvas").remove();
         $(".wr_grades_chart").append('<canvas id="canvas"></canvas>');
+        $("#wr_bs_grade").removeClass("hidden");
+        $("#wr_bs_grade").show(100);
         $("#canvas").show(100);        
         var ctx = document.getElementById("canvas").getContext("2d");
         var linechartlabels = [];
         var linechartdatasets = [];
         var linechartdata = {
             labels: linechartlabels,
-            datasets: linechartdatasets
+            datasets: linechartdatasets,
+            options:{
+                responsive: true,
+                legend:{
+                    enabled:true,
+                    position:top
+                }
+            }
         };
         var subjectgradesvalues = [];
         $.each(subject.grades, function(index,grade){
-            linechartlabels.push(grade.Date);
+            var date = new Date(grade.Date);
+            var day = date.getDay();
+            var month = date.getMonth();
+            var year = date.getYear();
+            linechartlabels.push($filter('date')(new Date(year, month, day), 'dd MMM'));
             subjectgradesvalues.push(grade.Value)
         });
         var dataset = {
             label: subject.Description,
-            fillColor : "rgba(220,220,220,0.2)",
-            strokeColor : "rgba(220,220,220,1)",
-            pointColor : "rgba(220,220,220,1)",
+            fillColor : "rgba(235,97,17,0.3)",
+            strokeColor : "rgba(235,97,17,1)",
+            pointColor : "rgba(255,193,0,1)",
             pointStrokeColor : "#fff",
             pointHighlightFill : "#fff",
             pointHighlightStroke : "rgba(220,220,220,1)",
@@ -576,6 +651,11 @@ WebRegApp.controller('gradesController', function($scope, $rootScope, $location,
 			responsive: true
 		});
         $scope.charted_subject = subject.Description;
+    }
+    
+    $scope.closeGradeTrand = function(){
+        $("#wr_bs_grade").hide(100);
+        $("#wr_bs_grade").addClass("hidden");
     }
     
 });
@@ -611,7 +691,7 @@ WebRegApp.controller('teachersController', function($scope, $rootScope, $locatio
         
         if(!$rootScope.studentClass){
             $http({
-                url: 'php/getStudentClass.php',
+                url: 'phpc/getStudentClass.php',
                 method: 'GET',
                 params: {
                     userid : $rootScope.account.UserID, 
@@ -627,7 +707,7 @@ WebRegApp.controller('teachersController', function($scope, $rootScope, $locatio
         }
         
         $http({
-            url: 'php/getTeacherListForStudent.php',
+            url: 'phpc/getTeacherListForStudent.php',
             method: 'GET',
             params: {
                 myclassid : $rootScope.studentClass.ClassID, 
@@ -642,6 +722,7 @@ WebRegApp.controller('teachersController', function($scope, $rootScope, $locatio
     }
     
 });
+
 
 /*--ANIMATIONS--*/
 

@@ -3,88 +3,94 @@
     <top-menu></top-menu>
     <div class="wr_injectedpage" id="page-content-wrapper"> 
         <div class="wr_injectedpagecontainer">
-            <div class="wr_injectedpagecontent animated fadeIn">                
-                <div class="wr_grades_table_container col col-xs-9 col-sm-10 col-md-11 col-lg-11">
-                    <div class="table-responsive">
-                        <table class="wr_grades_table table table-hover table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Subject 
-                                        <small class="hidden-xs hidden-sm">(Click a subject to view the grades chart)</small>
-                                        <small class="hidden-md hidden-lg">(Tap for subject chart)</small>
-                                    </th>
-                                    <th colspan="1000">Grades</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="subject in subjects" ng-if="subject.isGradable==true" ng-click="chartInit(subject)">
-                                    <td style="text-align:left;" class="hidden-xs hidden-sm">{{subject.Description}}</td>
-                                    <td style="text-align:left;" class="visible-xs visible-sm">
-                                        <div data-toggle="tooltip" data-placement="top" title="{{subject.Description}}">
-                                            {{subject.ShortDescription}}
-                                        </div>                                        
-                                    </td>
-                                    <td ng-repeat="grade in subject.grades" ng-style="{'background-color' : grade.Color}">
-                                        <img class="wr_grade_desc_alert" src="src/img/desc.png" ng-if="grade.Notes">
-                                        <div class="wr_grade_value hvr-grow text-center" style="widht:100%" data-toggle="tooltip" data-placement="top" title="Date: {{grade.Date}} &nbsp&nbsp&nbsp Type: {{grade.gradetype}} &nbsp&nbsp&nbsp Notes: {{grade.Notes}}">
-                                            <span ng-class="{wr_red_grade: grade.Value < 6}">{{grade.Value}}</span>
-                                        </div>
-                                    </td>
-                                    <td colspan="1000"></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="1000">
-                                        <strong>Total Avarage:</strong>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="wr_grades_table_container col col-xs-3 col-sm-2 col-md-1 col-lg-1">
-                    <div class="table-responsive">
-                        <table class="wr_grades_table table table-hover table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Avarage</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="subject in subjects" ng-if="subject.isGradable==true">                                    
-                                    <td ng-class="{wr_red_avarage: subject.Avarage < 3, wr_orange_avarage: subject.Avarage < 6, wr_yellow_avarage: subject.Avarage < 7, wr_lightgreen_avarage: subject.Avarage < 8, wr_green_avarage: subject.Avarage < 10}">
-                                       <span ng-class="{wr_red_grade: subject.Avarage < 6}" ng-if="subject.Avarage>0">{{subject.Avarage}}</span>
-                                       <span class="text-muted" ng-if="!subject.Avarage>0" style="opacity:0.4;">/</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td ng-class="{wr_red_avarage: total_avarage < 3, wr_orange_avarage: total_avarage < 6, wr_yellow_avarage: total_avarage < 7, wr_lightgreen_avarage: total_avarage < 8, wr_green_avarage: total_avarage < 10}">
-                                        <span><strong>{{total_avarage}}</strong></span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="wr_grades_types_legend col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="col col-xs-2 col-sm-3 col-md-2 col-lg-2">
-                        <label>Legend:</label>
-                    </div>
-                    <div class="wr_grades_types_legend_types col col-xs-10 col-sm-9 col-md-10 col-lg-10">
-                        <div ng-repeat="gradetype in gradetypes">
-                            <div class="col col-xs-3 col-sm-3 col-md-3 col-lg-3" ng-style="{'background-color' : gradetype.Color}">
-                                <label>{{gradetype.Description}}</label>
-                            </div>                            
+            <div class="wr_injectedpagecontent animated fadeIn">
+                <div class="row">
+                    <div class="wr_grades_table_container col col-xs-9 col-sm-10 col-md-11 col-lg-11">
+                        <div class="table-responsive">
+                            <table class="wr_grades_table table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Subject 
+                                            <small class="hidden-xs hidden-sm">(Click a subject to view the grades chart)</small>
+                                            <small class="hidden-md hidden-lg">(Tap for subject chart)</small>
+                                        </th>
+                                        <th colspan="1000">Grades</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="subject in subjects" ng-if="subject.isGradable==true" ng-click="chartInit(subject)">
+                                        <td style="text-align:left;" class="hidden-xs hidden-sm">{{subject.Description}}</td>
+                                        <td style="text-align:left;" class="visible-xs visible-sm">
+                                            <div data-toggle="tooltip" data-placement="top" title="{{subject.Description}}">
+                                                {{subject.ShortDescription}}
+                                            </div>                                        
+                                        </td>
+                                        <td ng-repeat="grade in subject.grades" ng-style="{'background-color' : grade.Color}">
+                                            <img class="wr_grade_desc_alert" src="src/img/desc.png" ng-if="grade.Notes">
+                                            <div class="wr_grade_value hvr-grow text-center" style="widht:100%" data-toggle="tooltip" data-placement="top" title="Date: {{grade.Date}} &nbsp&nbsp&nbsp Type: {{grade.gradetype}} &nbsp&nbsp&nbsp Notes: {{grade.Notes}}">
+                                                <span ng-class="{wr_red_grade: grade.Value < 6}">{{grade.Value}}</span>
+                                            </div>
+                                        </td>
+                                        <td colspan="1000"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1000">
+                                            <strong>Total Avarage:</strong>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                    </div>                    
+                    </div>
+                    <div class="wr_grades_table_container col col-xs-3 col-sm-2 col-md-1 col-lg-1">
+                        <div class="table-responsive">
+                            <table class="wr_grades_table table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Avarage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="subject in subjects" ng-if="subject.isGradable==true">                                    
+                                        <td ng-class="{wr_red_avarage: subject.Avarage < 3, wr_orange_avarage: subject.Avarage < 6, wr_yellow_avarage: subject.Avarage < 7, wr_lightgreen_avarage: subject.Avarage < 8, wr_green_avarage: subject.Avarage < 10}">
+                                           <span ng-class="{wr_red_grade: subject.Avarage < 6}" ng-if="subject.Avarage>0">{{subject.Avarage}}</span>
+                                           <span class="text-muted" ng-if="!subject.Avarage>0" style="opacity:0.4;">/</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td ng-class="{wr_red_avarage: total_avarage < 3, wr_orange_avarage: total_avarage < 6, wr_yellow_avarage: total_avarage < 7, wr_lightgreen_avarage: total_avarage < 8, wr_green_avarage: total_avarage < 10}">
+                                            <span><strong>{{total_avarage}}</strong></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="wr_grades_types_legend col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col col-xs-2 col-sm-3 col-md-2 col-lg-2">
+                            <label>Legend:</label>
+                        </div>
+                        <div class="wr_grades_types_legend_types col col-xs-10 col-sm-9 col-md-10 col-lg-10">
+                            <div ng-repeat="gradetype in gradetypes">
+                                <div class="col col-xs-3 col-sm-3 col-md-3 col-lg-3" ng-style="{'background-color' : gradetype.Color}">
+                                    <label>{{gradetype.Description}}</label>
+                                </div>                            
+                            </div>
+                        </div>                    
+                    </div>
+                    
                 </div>
-                <div class="wr_grades_chart col col-xs-12 col-sm-8 col-md-6 col-lg-6 hidden">
-                    <canvas id="canvas"></canvas>              
-                </div>
-                <div class="wr_grades_chart_desc col col-xs-12 col-sm-8 col-md-6 col-lg-6 hidden">
-                    <p>{{charted_subject}}</p>             
-                </div>
-                <p>&emsp;</p><p>&emsp;</p>
+                
             </div>
         </div>
+    </div>
+</div>
+<div id="wr_bs_grade" class="wr_black_screen hidden">
+    <div class="container text-center">
+        <div class="wr_grades_chart" style="margin-top:10%; margin-bottom:30px;">
+            <p>Andamento della materia: <b>{{charted_subject}}</b></p>
+            <canvas id="canvas"></canvas>              
+        </div>
+        <button class="btn btn-lg btn-info" ng-click="closeGradeTrand()">Ok I get it, close it.</button>
     </div>
 </div>

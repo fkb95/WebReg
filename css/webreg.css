@@ -17,6 +17,7 @@ body{
     margin-left:0 !important;
     margin-right:0 !important;
 }
+
 #header {
     height: 45px;
     background-color: #222222;
@@ -103,6 +104,22 @@ a:hover{
     margin-top: 100px;
 }
 
+.wr_img-center{
+    margin: auto auto;
+}
+
+.wr_btnGotop{
+    position: fixed;
+    bottom:50px;
+    right:50px;
+    z-index: 100;
+    border-radius: 50px;
+}
+
+-webkit-scrollbar
+{
+	z-index:100;
+}
 
 /*----HOME SECTION----*/
 
@@ -360,10 +377,72 @@ a:hover{
 
 .wr_slide{
     width:100%;
-    height:500px;
+/*    height:500px;*/
     min-height:100%;
     position: relative;
     background-color: white;
     padding:10px;
-    margin-bottom:10px;
+    margin-bottom:40px;
+}
+
+.wr_slide .col{
+    padding-bottom: 20px;
+    padding-left:3%;
+    padding-right:3%;
+}
+
+.wr_hr-slide{
+    margin-top:8px;
+    margin-bottom: 12px;
+}
+
+.wr_subjectname{
+    font-weight: bold;
+}
+
+.wr_slide_ul li, .wr_slide ol li{
+    padding:10px 0;
+    font-size: 16px;
+}
+
+.wr_slide .bg-info{
+    background-color: yellow;
+}
+
+.wr_rime_underline{
+    border-bottom: dotted 2px blue;
+}
+
+.wr_rime_underline2{
+    border-bottom: dotted 2px red;
+}
+
+.wr_enjambemant{
+    border-bottom: solid 1px orange;
+}
+
+.wr_img-xs{
+    max-height: 200px;
+}
+
+.wr_img-sm{
+    max-height: 290px;
+}
+
+.wr_img-md{
+    max-height: 350px;
+}
+
+.wr_img-lg{
+    max-height: 400px;
+}
+
+.wr_slide_subtitle{
+    padding-bottom:18px;
+}
+
+.wr_slides_menu li{
+    list-style: none;
+    padding:8px;
+    font-size: 17px;
 }

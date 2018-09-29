@@ -14,13 +14,14 @@
         <link rel="shortcut icon" sizes="192x192" href="src/img/wr.png">
         <link rel="apple-touch-startup-image" href="src/img/bg3.jpg">
         <!--CSS-->
-        <link id="cssPrimary" href="css/bootstrap.css" rel="stylesheet" /> 
+        <link id="cssPrimary" href="css/bootstrap.css" rel="stylesheet" />
         <link href="css/webreg.css" rel="stylesheet" />
         <link href="css/hover.css" rel="stylesheet" />
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/simple-sidebar.css" rel="stylesheet">
         <link href="css/animate.css" rel="stylesheet">
         <link href="css/upload.css" rel="stylesheet">
+        
     </head>
     <body>
          <div class="navbar navbar-default navbar-fixed-top">
@@ -31,7 +32,7 @@
                       <i class="fa fa-home"></i> WebReg  
                       <small class="hidden-xs">| Online electronic logbook</small>
                     </a>
-                    <small class="text-muted" style="line-height:45px;">v. 1.5.3</small>
+                    <small class="text-muted" style="line-height:45px;">v. 1.6.2</small>
                     <button aria-expanded="false" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
@@ -40,7 +41,7 @@
                     </button>
                 </div>
                 <div class="navbar-collapse collapse" id="navbar-main">
-                  <ul class="nav navbar-nav">                    
+                  <ul class="nav navbar-nav"  style="background-color:#222222;">                    
                     <li ng-class="{active: selected_menu_name == 'profile'}" class="visible-xs">
                         <a href="#profile"><i class="fa fa-user"></i>&nbsp Profile</a>
                     </li>        
@@ -52,7 +53,10 @@
                     </li>
                     <li ng-class="{active: selected_menu_name == 'homeworks'}" class="visible-xs">
                         <a href="#homeworks"><i class="fa fa-pencil"></i>&nbsp Homeworks</a>
-                    </li>                    
+                    </li>
+                    <li ng-class="{active: selected_menu_name == 'absences'}" class="visible-xs">
+                        <a href="#absences"><i class="fa fa-calendar-times-o"></i>&nbsp Absences</a>
+                    </li>
                     <li ng-class="{active: selected_menu_name == 'slides'}" class="visible-xs">
                         <a href="#slides"><i class="fa fa-file-powerpoint-o"></i>&nbsp Slides</a>
                     </li>                      
@@ -87,5 +91,7 @@
         <script src="js/webreg.js"></script>
         <script src="js/Chart.js"></script>
         <script src="js/Chart.Line.js"></script>
+        <script src="js/moment.min.js"></script>
+        <script src="js/fullcalendar.min.js"></script>
     </body>
 </html>

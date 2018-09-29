@@ -4,39 +4,478 @@
     <div class="wr_injectedpage" id="page-content-wrapper"> 
         <div class="wr_injectedpagecontainer">
             <div class="wr_injectedpagecontent animated fadeIn">
-                <h2 style="color:red;">Work in progress</h2>
+                <button class="wr_btnGotop btn btn-lg btn-warning" ng-click="goTop()">
+                    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                </button>
+                <div class="wr_slide" id="indexslide">
+                    <p class="wr_subjectname">Index</p>
+                    <hr class="wr_hr-slide">
+                    <h2>Mappa concettuale</h2>
+                    <br>
+                    <div class="row text-justify">
+                        <div class="col col-sm-4 col-lg-2">
+                            <h4>Go to:</h4>
+                            <ul class="wr_slides_menu" style="color:blue">
+                                <li style="cursor: pointer" ng-click="italiano()">Itliano</li>
+                                <li style="cursor: pointer" ng-click="storia()">Storia</li>
+                                <li style="cursor: pointer" ng-click="fisica()">Ed. Fisica</li>
+                                <li style="cursor: pointer" ng-click="tecnologie()">T.P.S.I.T.</li>
+                                <li style="cursor: pointer" ng-click="informatica()">Informatica</li>
+                            </ul>
+                        </div>
+                        <div class="col col-sm-8 col-lg-10 hvr-grow">
+                            <img src="src/img/map.png" class="img-responsive wr_img-center wr_img-lg">
+                        </div>
+                    </div>
+                    <p>
+                        
+                    </p>
+                </div>
                 <div class="wr_slide wr_slide_ita">
-                    <h3>Italiano:</h3>
-                    <p>La giovent&ugrave; e il rapporto con la figura paterna nella letteratura</p>
+                    <p class="wr_subjectname">Italiano</p>
+                    <hr class="wr_hr-slide">
+                    <h2>La famiglia nella letteratura: Pascoli e il "nido"</h2>
+                    <br>
+                    <div class="row text-justify">
+                        <div class="col col-sm-4 col-lg-3">
+                            <img src="src/img/pascoli2.jpg" alt="ritratto pascoli" class="img-responsive wr_img-center wr_img-xs">
+                            <h6 class="text-center">Giovanni Pascoli (1855-1912)</h6>
+                        </div>
+                        <div class="col col-sm-8 col-lg-9 hvr-grow">
+                            <h4 class="wr_slide_subtitle"><i><u>Un'infanzia agiata/agitata:</u></i></h4>
+                            <p>
+                                Quarto figlio di 10 fratelli, Pascoli vive una buona infanzia, fino alla <span class="bg-info">morte del padre</span> (10 agosto 1867).
+                                <br><br>
+                                L'evento è di grande impatto sulla poetica pascoliana relativo al "nido", ossia il nucleo familiare. Ciò verrà reso ancora più incisivo con la morte della madre e di due fratelli e successivamente del fratello maggiore.
+                                <br><br>
+                                Diventerà quindi il capofamiglia e ciò spingerà il poeta alla ricerca della <span class="bg-info">ricostruzione del nido</span>.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row text-justify">
+                        <div class="col col-sm-8 col-lg-8 hvr-grow">
+                            <h4 class="wr_slide_subtitle"><i><u>La poetica del fanciullino:</u></i></h4>
+                            <p>
+                                Il "fanciullino" di pascoli è ciò che egli definisce <span class="bg-info">la parte infantile assopita e soffocata degli adulti</span>.
+                                Questo è in grado di captare ciò che spesso non notiamo, in modo istintivo e non con la ragione.
+                                <br><br>
+                                La poesia diventa quindi la voce di questo fanciullo alla scoperta del mondo.
+                                <br><br>
+                                Per quanto possa sembrare apparentemente una figura umile e indifesa, l'abilità innata del fanciullino lo rende <span class="bg-info">un'entità superiore</span>, elevata e privilegiata, non comune come il resto delle persone.
+                            </p>
+                        </div>
+                        <div class="col col-sm-4 col-lg-4">
+                            <img src="src/img/pascoli.jpg" alt="pascoli e il nido" class="img-responsive wr_img-center wr_img-xs">
+                            <h6 class="text-center">G. Pascoli e le sorelle</h6>
+                        </div>
+                    </div>
+                    <div class="row text-justify">
+                        <div class="col col-lg-12">
+                            <h4 class="wr_slide_subtitle"><i><u>Opere principali:</u></i></h4>
+                            <div class="col col-sm-4 col-lg-4 text-left hvr-grow">
+                                <h4 class="wr_slide_subtitle"><i>[Myricae]</i></h4>
+                                <p>
+                                    <u>Tematiche</u>:<br>La morte, la natura e il dolore.<br><br>
+                                    <u>Corrente</u>:<br>Impressionismo.<br><br>
+                                    <u>Stile poetico</u>:<br>Punteggiatura fitta, enjambemants, onomatopee.<br><br>
+                                    <u>Note</u>:<br>Contrapposizioni alto-basso, vecchio-nuovo, tradizione-sperimentalismo.
+                                </p>
+                            </div>
+                            <div class="col col-sm-4 col-lg-4 text-left hvr-grow">
+                                <h4 class="wr_slide_subtitle"><i>[Canti di Castelvecchio]</i></h4>
+                                <p>
+                                    <u>Tematiche</u>:<br>La morte, la natura, il ricordo e la famglia.<br><br>
+                                    <u>Corrente</u>:<br>Simbolismo.<br><br>
+                                    <u>Stile poetico</u>:<br>Liricità distesa, parallelismo uomo/natura.<br><br>
+                                    <u>Note</u>:<br>Il ritmo delle stagioni è paragonato al naturale ciclo di vita.
+                                </p>
+                            </div>
+                            <div class="col col-sm-4 col-lg-4 text-left hvr-grow">
+                                <h4 class="wr_slide_subtitle"><i>[Poemetti]</i></h4>
+                                <p>
+                                    <u>Tematiche</u>:<br>La morte, la natura e il dolore.<br><br>
+                                    <u>Corrente</u>:<br>Sperimentalismo.<br><br>
+                                    <u>Stile poetico</u>:<br>Testi lunghi e dialogati, terzina dantesca, termini dialettali e lingue speciali.<br><br>
+                                    <u>Note</u>:<br>Contrapposizioni alto-basso, vecchio-nuovo, tradizione-sperimentalismo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-12 col-lg-6">
+                            <div class="col-sm-6 col-lg-12 hvr-grow">
+                                <h4 class="wr_slide_subtitle"><i><u>Lavandare</u></i> (da <i>"Myricae")</i></h4>
+                            
+                                <p style="margin-bottom:40px;">
+                                Nel campo che è per metà arato per metà no<br>
+                                c’è un aratro senza buoi <span class="wr_enjambemant">che sembra<br>
+                                dimenticato</span>, in mezzo alla nebbia.<br><br>
+
+
+                                E scandito dalla riva del fiume <span class="wr_enjambemant">si sente<br>
+                                il rumore delle lavandaie</span> che lavano i panni,<br>
+                                sbattendoli, e lunghe cantilene:<br><br>
+
+
+                                Il vento soffia e ai rami cadono le foglie,<br>
+                                e tu non sei ancora tornato!<br>
+                                da quando sei partito <span class="wr_enjambemant">sono rimasta<br>
+                                come un aratro abbandonato</span> in mezzo al campo.
+                                </p>
+                            </div>
+                            <div class="col-sm-6 col-lg-12">
+                                <img src="src/img/aratro.jpg" alt="aratro Van Gogh" class="img-reponsive wr_img-center wr_img-sm">
+                                <h6>Vincent Van Gogh, <i>Campo innevato con un aratro</i> (1890)</h6>
+                            </div>
+                        </div>
+                        <div class="col col-sm-12 col-lg-6">
+                            <h4 class="wr_slide_subtitle"><i><u>Il gelsomino notturno</u></i>  (da <i>"Canti di Castelvecchio")</i></h4>
+                            <p>
+                            <div class="col col-sm-6 col-lg-12 hvr-grow">    
+                            E s’aprono i fiori nott<span class="wr_rime_underline">urni</span>,<br>
+                            nell’ora che penso a’ miei c<span class="wr_rime_underline2">ari</span>.<br>
+                            Sono apparse in mezzo ai vib<span class="wr_rime_underline">urni</span><br>
+                            le farfalle crepuscol<span class="wr_rime_underline2">ari</span>.<br><br>
+                                
+                            Da un pezzo si tacquero i gr<span class="wr_rime_underline">idi</span>:<br>
+                            là sola una casa bisb<span class="wr_rime_underline2">iglia</span>.<br>
+                            Sotto l’ali dormono i n<span class="wr_rime_underline">idi</span>,<br>
+                            come gli occhi sotto le c<span class="wr_rime_underline2">iglia</span>.<br><br>
+                                
+                            Dai calici aperti si es<span class="wr_rime_underline">ala</span><br>
+                            l’odore di fragole r<span class="wr_rime_underline2">osse</span>.<br>
+                            Splende un lume là nella s<span class="wr_rime_underline">ala</span>.<br>
+                            Nasce l’erba sopra le f<span class="wr_rime_underline2">osse</span>.<br><br>
+                            </div>
+                            <div class="col col-sm-6 col-lg-12 hvr-grow">
+                            Un’ape tardiva suss<span class="wr_rime_underline">urra</span><br>
+                            trovando già prese le c<span class="wr_rime_underline2">elle</span>.<br>
+                            La Chioccetta per l’aia azz<span class="wr_rime_underline">urra</span><br>
+                            va col suo pigolìo di st<span class="wr_rime_underline2">elle</span>.<br><br>
+                                
+                            Per tutta la notte s’es<span class="wr_rime_underline">ala</span><br>
+                            l’odore che passa col v<span class="wr_rime_underline2">ento</span>.<br>
+                            Passa il lume su per la sc<span class="wr_rime_underline">ala</span>;<br>
+                            brilla al primo piano: s’è sp<span class="wr_rime_underline2">ento</span>...<br><br>
+                                
+                            È l’alba: si chiudono i petali<br>
+                            un poco gualciti; si c<span class="wr_rime_underline2">ova</span>,<br>
+                            dentro l’urna molle e segreta,<br>
+                            non so che felicità nu<span class="wr_rime_underline2">ova</span>.
+                            </div>
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="wr_slide wr_slide_sto">
-                    <h3>Storia:</h3>
-                    <p>Mussolini e le riforme sulla scuola</p>
+                    <p class="wr_subjectname">Storia</p>
+                    <hr class="wr_hr-slide">
+                    <h2>L'influenza fascista in ambito scolastico</h2>
+                    <br>
+                    <div class="row">
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-8 text-justify hvr-grow">
+                            <p>
+                                Il periodo fascista ebbe grande <span class="bg-info">influenza sulla cultura e la formazione</span> del popolo, sopratutto a livello scolastico.
+                                <br><br>
+                                <span class="bg-info">Manipolare il sistema culturale</span> era fondamentale per la creazione di un regime solido, ed era quindi prioritario lo sviluppo dell' <span class="bg-info">ideologia fascista nei giovani</span>.
+                                <br><br><br>
+                                Il più importante dei cambiamenti fù la <span class="bg-info">riforma Gentile</span>, che mutò radicalmente la scuola.
+                            </p>                            
+                        </div>
+                        <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-4 text-center">
+                            <img src="src/img/scuola_fascismo.bmp" class="img-responsive wr_img-center wr_img-xs">
+                            <h6>Scuola elementare nel periodo fascista</h6>
+                        </div>                       
+                        <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-4 text-center">
+                            <img src="src/img/gentile.jpg" class="img-responsive wr_img-center wr_img-sm">
+                            <h6>Giovanni Gentile e Benito Mussolini</h6>
+                        </div>
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-8 text-justify hvr-grow">
+                            <h4 class="wr_slide_subtitle"><i><u>La riforma Gentile</u></i></h4>
+                            <p>
+                                Ispirata dal filosofo fascista Giovanni Gentile ed elaborata dal Ministro della Pubblica Istruzione Giuseppe Lombardo Radice, la riforma fu emanata in diversi decreti tra il 1922 e il 1923 con il pieno appoggio del governo.
+                            </p>
+                            <p>
+                                Punti salienti:
+                                <ul>
+                                    <li>
+                                        Obbligo scolastico innalzato fino a <span class="bg-info">14 anni</span>.
+                                    </li>
+                                    <li>
+                                        Insegnamento obbligatorio della <span class="bg-info">religione</span> cattolica e della filosofia.
+                                    </li>
+                                    <li>
+                                        Maggiore attenzione per studenti disabili con costruzione di istituti speciali e plessi scolastici adeguati.
+                                    </li>
+                                    <li>
+                                        Creazione dei licei scientifico, femminile e magistrale.
+                                    </li>
+                                </ul>                                
+                            </p>
+                            <p>
+                                Con questa riforma, <span class="bg-info">solo i diplomati avevano accesso alle università</span> ed, in base al diploma riconosciuto, si definiva a quali facoltà ci si sarebbe potuti iscrivere.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">                        
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-8 text-justify hvr-grow">
+                            <p>
+                                Altre influenze importanti furono le seguenti:                                
+                            </p>
+                            <ul>
+                                    <li style="padding-bottom:20px;">La Reale <span class="bg-info">Accademia d'Italia</span> (1929-1944): promuoveva il campo delle scienze, delle lettere e delle arti.</li>
+                                    <li style="padding-bottom:20px;">L'Istituto fascista di cultura (poi "Istituto nazionale di cultura fascista"): ente creato nel 1925 e per la tutela, <span class="bg-info">diffusione e sviluppo degli ideali fascisti</span> e della cultura italiana.</li>
+                                    <li style="padding-bottom:20px;">L'opera nazionale del dopolavoro (OND 1° maggio 1925): incentrata su attività come escursionismo, turismo, educazione artistica, l'assistenza sociale, igienica, sanitaria, e <span class="bg-info">perfezionamento professionale</span>.</li>
+                                    <li style="padding-bottom:20px;">L'opera nazionale balilla (ONB 3 aprile 1926): per lo <span class="bg-info">sviluppo fisico, sociale e militare</span> dei giovani.</li>
+                                </ul>
+                        </div>
+                        <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-4 text-center">
+                            <img src="src/img/farnesina.jpg" class="img-responsive wr_img-center wr_img-sm">
+                            <h6>L'Accademia oggi, Villa Farnesina (Roma)</h6>
+                        </div>
+                    </div>
                 </div>
                 <div class="wr_slide wr_slide_edf">
-                    <h3>Educazione fisica:</h3>
-                    <p>Storia dello sport moderno</p>
+                    <p class="wr_subjectname">Educazione fisica</p>
+                    <hr class="wr_hr-slide">
+                    <h2>Lo sport nel periodo fascista</h2>
+                    <br>
+                    <div class="row">                        
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 text-justify">
+                            <p>
+                                L'educazione e la pratica sportiva ebbero un ruolo fondamentale nel regime fascista. Lo sport diventò rappresentazione della potenza e della identità nazionale.
+                                <br><br>
+                                Nelle scuole, <span class="bg-info">l'educazione fisica era considerata al pari delle altre discipline</span> scolastiche, gli insegnanti di ginnastica iniziarono a far parte del Consiglio dei professori e vennero dedicate 2 ore settimanali all'insegnamento dell'educazione fisica.
+                                <br><br>                                
+                                Si praticavano esercizi a corpo libero e agli attrezzi, volteggi, lanci, corse piane e ad ostacoli e marce. Non mancavano gite, escursioni e campeggi.
+                                <br><br>
+                                Gli sport più diffusi erano <span class="bg-info">l'atletica leggera, il calcio, il ciclismo, lo sci e il nuoto</span>, ma non mancavano bocce, palla al tamburello, tiro alla fune, canottaggio e palla a volo.
+                                <br><br>
+                                Da ricordare sono le manifestazioni sportive più grandi quali <span class="bg-info">Giro d'Italia e Mille Miglia</span>.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6 text-justify hvr-grow">
+                            <h4 class="wr_slide_subtitle"><i><u>L'ONB, Opera nazionale Balilla</u></i></h4>
+                            <p>
+                                Creata il 3 aprile 1926, l'onb provvedeva <span class="bg-info">l'insegnamento dell'educazione fisica dalle scuole elementari alle scuole superiori</span> sostituendo l'ENEF (Ente Nazionale Educazione Fisica). 
+                                <br><br>
+                                Si ispirava ai concetti greco-romani dell'educazione intellettuale aggiungendo però un <span class="bg-info">carattere militare</span>.
+                                <br><br>
+                                Oltre che nelle palestre offerte dai comuni, l'attività fisica veniva affiancata da viaggi, campeggi e saggi.
+                            </p>
+                        </div>                     
+                        <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6 text-justify hvr-grow">
+                            <h4 class="wr_slide_subtitle"><i><u>GUF, Gruppi Universitari Fascisti</u></i></h4>
+                            <p>
+                                Nascono nel 1920, ma dal 27 in poi diventano interesse del fascismo, per la formazione dei <span class="bg-info">giovani dai 18 ai 25 anni</span>.
+                            </p>
+                            <p>
+                                Potevano partecipare ai Littorali dello sport ed erano scelti tramite selezioni provinciali. <br>
+                                I vincitori nelle varie discipline si sfidavano poi nei Littoriali nazionali, la cui vittoria valeva il titolo di “Littore d'Italia”.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">                        
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-8 text-justify hvr-grow">
+                            <h4 class="wr_slide_subtitle"><i><u>La Carta dello sport (1928)</u></i></h4>
+                            <p>
+                                Con la “Carta dello Sport” venne stabilito che l'Opera Nazionale Balilla si sarebbe occupata dell'educazione fisica sia dei balilla, sia degli avanguardisti, ma <span class="bg-info">la specializzazione nelle varie attività sportive era riservato alle società</span> e agli enti aderenti al CONI.
+                                <br><br>
+                                Nessun giovane poteva essere iscritto alle organizzazioni aderenti al CONI se non era iscritto già all'ONB.
+                                <br><br>
+                                Venne poi istituita la “tessera unica per tutti gli iscritti alle singole federazioni sportive”, in cui vengono tenute presenti le diverse possibilità economiche di chi praticava le varie attività sportive.
+                            </p>
+                        </div>
+                        <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-4 text-center">
+                            <img src="src/img/nazionale.jpg" class="img-responsive wr_img-center wr_img-sm">
+                            <h6>Nazionale italiana di calcio, 1930</h6>
+                        </div>
+                    </div>                    
                 </div>
-                <div class="wr_slide wr_slide_tec">    
-                    <h3>Tecnologie informatiche:</h3>
-                    <p>Siti internet, intranet e extranet</p>
+                <div class="wr_slide wr_slide_tec">
+                    <p class="wr_subjectname">Tecnologie informatiche</p>
+                    <hr class="wr_hr-slide">
+                    <h2>Classificazione dei sistemi informativi</h2>
+                    <br>
+                    <div class="row">                        
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-12 text-justify">
+                            <p>
+                                I siti online possono essere catalogati in differenti <span class="bg-info">categorie</span> in base al tipo di <span class="bg-info">servizio</span> offerto, al tipo di <span class="bg-info">utenza</span> attiva e al tipo di <span class="bg-info">operazioni</span> che è possibile effettuare. Un delle classificazioni è basata sulla modalità di accesso al sito, ne derivano quindi le seguenti categorie:
+                                <ul>
+                                    <li>Siti <strong>Internet</strong></li>
+                                    <li>Siti <strong>Intranet</strong></li>
+                                    <li>Siti <strong>Extranet</strong></li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">                        
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-7 text-justify  hvr-grow">
+                            <h4 class="wr_slide_subtitle"><i><u>Siti Internet</u></i></h4>
+                            <p>
+                                Sono pagine web a <span class="bg-info">scopo informativo</span> raggiungibili da chiunque restando in anonimato, poiché non è richiesta nessuna informazione riguardante l'utente. 
+                                <br><br>
+                                L'obiettivo principale è quello di essere accessibile il più tempo possibile e per un bacino di utenza ampio (o mirato). 
+                            </p>
+                        </div>
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-5 text-center">
+                            <img src="src/img/internet.jpg" class="img-responsive wr_img-center wr_img-sm">
+                            <h6>Homepage di www.governo.it</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-5 text-center">
+                            <img src="src/img/intranet.jpg" class="img-responsive wr_img-center wr_img-sm">
+                            <h6>Portale per creare Intranet personali</h6>
+                        </div>
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-7 text-justify hvr-grow">
+                            <h4 class="wr_slide_subtitle"><i><u>Siti Intranet</u></i></h4>
+                            <p>
+                                L'utenza di questi portali è estremamente limitata (da qui "intra-net"), poiché dedicati alla gestione interna delle <span class="bg-info">aziende</span>.
+                                <br><br>
+                                Solo i <span class="bg-info">dipendenti autorizzati</span> potranno quindi effettuare l'accesso ed usufruire dei servizi offerti.
+                                <br><br>
+                                Grazie alle intranet è possibile far comunicare i reparti aziendali e renderli partecipi delle decisioni dell'azienda, dei prossimi lavori e di aggiornamenti in generale.
+                            </p>
+                        </div>                        
+                    </div>
+                    <div class="row">                        
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-7 text-justify hvr-grow">
+                            <h4 class="wr_slide_subtitle"><i><u>Siti Extranet</u></i></h4>
+                            <p>
+                                Siti web con <span class="bg-info">utenza ben definita</span>, solitamente formata da ad esempio clienti e fornitori.
+                                <br><br>
+                                Amazon, eBay e tanti altri portali <span class="bg-info">eCommerce</span> sono un <span class="bg-info">esempio</span> lampante di ciò che è un sito extranet, in quanto l'utenza è formata da aziende rivenditrici, clienti interessati e la stessa società padrona del servizio online.
+                                <br><br>
+                                &Eacute; fondamentale in questo tipo di infrastrutture <span class="bg-info">rendere standardizzato il sistema</span> per far si che sia compatibile con quello di terze entità come clienti e fornitori.
+                            </p>
+                        </div>
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-5 text-center">
+                            <img src="src/img/extranet.jpg" class="img-responsive wr_img-center wr_img-sm">
+                            WebReg
+                        </div>
+                    </div>
                 </div>
-                <div class="wr_slide wr_slide_sis">    
-                    <h3>Sistemi e reti:</h3>
-                    <p></p>
-                </div>
-                <div class="wr_slide wr_slide_gpr">    
-                    <h3>Gestione progetto:</h3>
-                    <p></p>
-                </div>
+                <!--<div class="wr_slide wr_slide_gpr">
+                    <p class="wr_subjectname">Gestione progetto</p>
+                    <hr class="wr_hr-slide">
+                    <h2>Titolo argomento</h2>
+                    <br>
+                    <p>
+                        Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet
+                    </p>
+                </div>-->
                 <div class="wr_slide wr_slide_inf">    
-                    <h3>Informatica:</h3>
-                    <p></p>
+                    <p class="wr_subjectname">Informatica</p>
+                    <hr class="wr_hr-slide">                    
+                    <h2>Linguaggio SQL, le query e le stored procedure</h2>
+                    <br>
+                    <div class="row">                        
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-8 text-justify hvr-grow">
+                            <h4 class="wr_slide_subtitle"><i><u>L'SQL (Structured Query Language)</u></i></h4>
+                            <p>
+                                &Eacute; un <span class="bg-info">linguaggio</span> standard per i <span class="bg-info">database</span> relazionali.
+                                <br><br>
+                                Si suddivide in 5 sottolinguaggi:
+                                <ul>
+                                    <li><strong>DDL (Data Definition Language)</strong>: per la creazione e la modifica degli archivi</li>
+                                    <li><strong>DML (Data Manipulation Language)</strong>: permette l'inserzione e la modifica dei dati</li>
+                                    <li><strong>DCL (Data Control Language)</strong>: gestisce i permessi di accesso e modifica dei dati</li>
+                                    <li><strong>DQL (Data Query Language)</strong>: indispensabile per le interrogazioni al database</li>
+                                    <li><strong>DMCL (Device Media Control Language)</strong>: controlla le memorie di massa</li>
+                                </ul>
+                                Caratteristiche:
+                                <ul>
+                                    <li>Non è case sensitive</li>
+                                    <li>Computazionalmente incompleto</li>
+                                    <li>System incomplete (non dialoga con alcuna perifierica)</li>
+                                    <li>I comandi sono costituiti da <strong>Costrutti</strong> (es: SELECT, CREATE...), <strong>Clausole</strong>  (es: FROM, WHERE...) e <strong>Valori</strong>  (es: Rosso, 50, 05/04/1995...)</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-4 text-center">
+                            <img src="src/img/sql.png" class="img-responsive wr_img-center wr_img-sm">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-5 text-center">
+                            <img src="src/img/query.jpg" class="img-responsive wr_img-center wr_img-md">
+                            <h6>Esempio di query in Microsoft SQLServer</h6>
+                            <img src="src/img/query2.jpg" class="img-responsive wr_img-center wr_img-md">
+                            <h6>Esempio di query in MySQL</h6>
+                        </div>
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-7 text-justify hvr-grow">
+                            <h4 class="wr_slide_subtitle"><i><u>Le query</u></i></h4>
+                            <p>
+                                Sono vere e proprie <span class="bg-info">interrogazioni al database</span> da parte dell'utente, fatte con lo scopo di compiere determinate operazioni sui dati in esso contenuti.
+                                <br><br>
+                                Si basano sul sottolinguaggio DQL (Data Query Language) che comprende i <span class="bg-info">comandi</span> per leggere ed elaborare i dati presenti in un database.
+                                <br><br>
+                                Esistono diversi tipi di query:
+                                <ul>
+                                    <li><strong>Di selezione (SELECT):</strong> estrae i dati da una o più tabelle e li mostra in una nuova tabella.</li>
+                                    
+                                    <li><strong>Di accodamento (INSERT):</strong> aggiunge a tabelle già esistenti un gruppo di record.</li>
+                                    
+                                    <li><strong>Di aggiornamento (UPDATE):</strong> modifica il valore di uno o più campi di records esistenti.</li>
+                                    
+                                    <li><strong>Di eliminazione (DELETE):</strong> cancella uno o più record in base a dei criteri (WHERE).</li>
+                                    
+                                    <li><strong>A campi incrociati:</strong> "Incrocia" i campi di più tabelle in modo tale da ottenere una matrice in cui le righe corrispondono normalmente a campi di tipo descrittivo e riepilogativo, mentre le colonne corrispondono a totali o conteggi.</li>
+                                    
+                                    <li><strong>Di creazione tabella (CREATE TABLE):</strong> crea una nuova tabella e, se voluto, la alimenta con le righe prodotte da una query.</li>
+                                </ul>
+                            </p>
+                        </div>                        
+                    </div>
+                    <div class="row">                        
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-7 text-justify hvr-grow">
+                            <h4 class="wr_slide_subtitle"><i><u>Le stored procedure</u></i></h4>
+                            <p>
+                                Sono <span class="bg-info">programmi scritti in SQL</span> risiedenti nel database e si distinguono in 3 sottotipi:
+                                <ul>
+                                    <li><strong>Funzioni:</strong> restituiscono un singolo valore oltre ad accettare <span class="bg-info">parametri</span> di ingresso e/o uscita</li>
+                                    <li><strong>Procedure:</strong> non restituiscono valori ma accettano parametri di ingresso e/o uscita</li>
+                                    <li><strong>Trigger:</strong> sono attivati da <span class="bg-info">eventi</span></li>
+                                </ul>
+                                <br><br>
+                                Le stored procedure vengono <span class="bg-info">compilate</span> dal DBMS, ciò ottimizza e l'esecuzione delle query.
+                            </p>
+                        </div>
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-5 text-center">
+                            <img src="src/img/storedprocedures.jpg" class="img-responsive wr_img-center wr_img-md">
+                            <h6>Esempio di stored procedure in MySQL</h6>
+                        </div>
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-6 text-justify hvr-grow">
+                            <h4 class="wr_slide_subtitle"><i>Vantaggi</i></h4>
+                            <ul>
+                                <li>Evita al client di riscrivere query quindi client e server scambieranno <span class="bg-info">meno informazioni</span>.</li>
+                                <li>Sono possibili elaborazioni complesse non altrimenti realizzabili usando unicamente query SQL.</li>
+                                <li>La <span class="bg-info">compilazione</span> di una stored procedure avviene una volta sola. Ogni volta che la procedura viene richiamata viene semplicemente eseguita. Questo <span class="bg-info">aumenta le prestazioni</span>.</li>
+                                <li>Permette di mantenere <span class="bg-info">librerie di funzioni</span> da utilizzare all'interno del database stesso.</li>
+                            </ul>
+                        </div>
+                        <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-6 text-justify hvr-grow">
+                            <h4 class="wr_slide_subtitle"><i>Svantaggi</i></h4>
+                            <ul>
+                                <li><span class="bg-info">Aumentano il carico</span> di lavoro per il server.</li>
+                                <li>A volte non si può utilizzare il linguaggio che si vorrebbe utilizzare, perché il DBMS non lo supporta.</li>
+                                <li><span class="bg-info">Non sono compatibili</span> con il modello logico di <span class="bg-info">applicativi a tre livelli</span>.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="wr_slide wr_slide_ing">    
-                    <h3>Inglese:</h3>
-                    <p></p>
-                </div>
+                <!--<div class="wr_slide wr_slide_ing">    
+                    <p class="wr_subjectname">Inglese</p>
+                    <hr class="wr_hr-slide">
+                    <h2>Titolo argomento</h2>
+                    <br>
+                    <p>
+                        Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet
+                    </p>
+                </div>-->
                 <p>&emsp;</p>
             </div>
         </div>
